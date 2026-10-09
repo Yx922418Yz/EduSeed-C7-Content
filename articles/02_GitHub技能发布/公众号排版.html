@@ -1,0 +1,57 @@
+<section style="font-size:16px;line-height:1.75;color:#3f3f3f;letter-spacing:0.5px;">
+
+<p style="margin:0 0 18px 0;padding:14px 16px;background:#EAF6F9;border-left:4px solid #0E9BB9;border-radius:0 8px 8px 0;font-size:15px;color:#12606f;">一个开学前连 GitHub 是什么都不知道的大一新生，是怎么靠 AI，把自己做的四个"小技能"堂堂正正发到一个开源仓库里的？这篇讲全过程，包括我对着"连接超时"发呆的那个下午。</p>
+
+<h2 style="font-size:19px;color:#0d5c6e;margin:28px 0 14px 0;padding-left:10px;border-left:5px solid #0E9BB9;">先说清楚，我有多"菜"</h2>
+
+<p style="margin:0 0 16px 0;">我是李亚轩，郑州西亚斯学院软件工程 2025 级。</p>
+
+<p style="margin:0 0 16px 0;">如果我说我是零基础，你可能觉得我在谦虚。真不是。开学那会，我对"代码"的全部认知，停留在课上跟着老师敲的几行 C 语言。而 GitHub 呢？我第一次听到时的内心 OS 是：这是个啥网站？能吃吗？</p>
+
+<p style="margin:0 0 16px 0;">就是这么一个我，现在有一个自己的开源仓库，里面躺着我做的四个"技能"，全世界任何人都能看到、能下载。这中间发生了什么？这篇讲明白。</p>
+
+<h2 style="font-size:19px;color:#0d5c6e;margin:28px 0 14px 0;padding-left:10px;border-left:5px solid #0E9BB9;">第一步：我先做了四个"技能"</h2>
+
+<p style="margin:0 0 16px 0;">故事从 C4 这个挑战说起。它要求我把自己会做的一件事，沉淀成一个<strong>别人拿过去就能用的"技能包"</strong>。我做了四个，说出来很朴素：</p>
+
+<p style="margin:0 0 10px 0;padding:12px 16px;background:#f6fbfc;border-radius:8px;">· 把普通 Markdown 排成能直接粘进公众号的样子<br>· 帮我把作业题自动求解、顺便排好版<br>· 在本地大模型上跑 Agent 的技能<br>· 自动评审技能、挑毛病的技能</p>
+
+<p style="margin:0 0 16px 0;">没有一个是惊天动地的黑科技。但共同点是：<strong>都是我自己真遇到过的麻烦，然后把解决办法打包了。</strong>做着做着我发现——"会做一个东西"和"做成别人也能用的东西"，中间隔着一整个太平洋。你自己用，能跑就行；别人用，你得写清楚怎么装、怎么用、出错了咋办。这个说明文档差点把我逼疯。</p>
+
+<h2 style="font-size:19px;color:#0d5c6e;margin:28px 0 14px 0;padding-left:10px;border-left:5px solid #0E9BB9;">东西做好了，然后呢？</h2>
+
+<p style="margin:0 0 16px 0;">四个技能躺在我电脑桌面，像四个没人看的作品。C5 这个挑战就是来解决这个的：<strong>把它开源，发布到 GitHub。</strong></p>
+
+<p style="margin:0 0 16px 0;">我心情很矛盾：一方面觉得"哇我要开源了好酷"，一方面又怕——听说 GitHub 都是大神用的，我这种连命令行都不利索的，不会上去就被劝退吧？</p>
+
+<p style="margin:0 0 16px 0;">事实证明，劝退是真的。但不是被大神，是被一个我完全没预料到的东西。</p>
+
+<h2 style="font-size:19px;color:#0d5c6e;margin:28px 0 14px 0;padding-left:10px;border-left:5px solid #0E9BB9;">那个卡了我一下午的"连接超时"</h2>
+
+<p style="margin:0 0 16px 0;">照教程，发布代码一般用一个叫 git 的工具，敲几条命令把本地文件"推"上去。我照做了，命令行给我返回一个特别冷酷的报错：<strong style="color:#c0392b;">连接超时。</strong></p>
+
+<p style="margin:0 0 16px 0;">我以为网不好，重连，还超时。以为命令敲错，让 AI 看，它说没问题。我重启了电脑，还超时。我就对着这个报错，发了整整一下午呆。那种憋屈特别真实：<strong>东西明明做好了，就是送不上去。</strong></p>
+
+<p style="margin:0 0 16px 0;">后来我把完整报错、网络环境、系统全描述给 AI，它帮我定位到一个我根本想不到的原因：<strong>不是代码的问题，是我这台机器从 git 工具直连 GitHub 服务器，网络就是不通。</strong></p>
+
+<p style="margin:0 0 16px 0;">这时候 AI 给了我一条完全不同的路：<em style="color:#0d5c6e;">"既然 git 连不上，我们就不用它。GitHub 有一套网页接口，我们用 Python 直接通过接口把文件传上去。"</em></p>
+
+<p style="margin:0 0 16px 0;padding:12px 16px;background:#EAF6F9;border-radius:8px;">就这么一句话，把我从死胡同里拽了出来。<strong style="color:#0d5c6e;">我没用 git push，是用一段 Python 脚本，通过 GitHub 开放接口，一个文件一个文件"递"上去的。</strong>最后仓库一个文件没少，整整齐齐。</p>
+
+<h2 style="font-size:19px;color:#0d5c6e;margin:28px 0 14px 0;padding-left:10px;border-left:5px solid #0E9BB9;">我到底在干嘛？</h2>
+
+<p style="margin:0 0 10px 0;">事后复盘，我其实做了几件特别朴素的事：</p>
+
+<p style="margin:0 0 10px 0;">1️⃣ <strong>注册账号，建空仓库。</strong>这一步 AI 全程带着我，点哪里、填什么名字。<br>2️⃣ <strong>给文件分类。</strong>文章放 articles/，说明放根目录，追踪表放 tracking/。文件夹结构本身，就是第一份说明。<br>3️⃣ <strong>一个文件一个文件地传。</strong>传完一个就去网页上点开看一眼——真的在。<br>4️⃣ <strong>写 README。</strong>别人三秒钟看不懂这是啥，就走了。</p>
+
+<p style="margin:0 0 16px 0;">最有成就感的是第 3 步那个"真的在"。<strong>我做的东西，第一次不是存在自己电脑里，而是挂在一个全世界都能访问的地方。</strong>这种"它真的存在了"的实感，是我以前在宿舍瞎鼓捣从来没有过的。</p>
+
+<h2 style="font-size:19px;color:#0d5c6e;margin:28px 0 14px 0;padding-left:10px;border-left:5px solid #0E9BB9;">几句大实话</h2>
+
+<p style="margin:0 0 10px 0;">· <strong>"不会写代码"不是借口。</strong>我写不出多漂亮的代码，但我会把问题讲清楚、让 AI 帮我查错、死磕到它跑通。这就够开始了。<br>· <strong>卡住时换条路比死磕重要。</strong>那个超时卡我一下午，最后解法是"绕开 git"。<br>· <strong>说明文档不是可有可无。</strong>东西再牛，别人看不懂等于零。<br>· <strong>公开会反过来逼你认真。</strong>知道全世界都能看到，我整理文件夹时都会不自觉认真起来。</p>
+
+<p style="margin:0 0 16px 0;">一个月前我连 GitHub 是啥都不知道。现在我有一个开源仓库，里面是我自己做的四个技能。<strong style="color:#0d5c6e;">我没变成大神，但我从"只会在自己电脑里瞎玩"，变成了"能把东西正经发出去给人看的人"。</strong>这一步，比技术本身值钱多了。</p>
+
+<section style="margin:28px 0 0 0;padding:16px;background:#EAF6F9;border-radius:10px;font-size:15px;color:#0d5c6e;">如果你也一直想把自己做的小东西发到网上，但被"GitHub 好难"吓住了——别怂。评论区扣个"1"，人多的话，我把这套"不用 git、零基础也能发仓库"的保姆级流程，专门整理一篇出来。</section>
+
+</section>
